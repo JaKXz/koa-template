@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
-const http = require('http');
-const server = require('./server');
+const http = require("http");
+const server = require("./server");
 
-const { port } = require('./config').server;
+const { port } = require("./config").server;
 
 async function bootstrap() {
   /**
@@ -15,13 +15,13 @@ async function bootstrap() {
 }
 
 bootstrap()
-  .then(server =>
+  .then((server) =>
     console.log(`🚀 Server listening on port ${server.address().port}!`),
   )
-  .catch(err => {
+  .catch((err) => {
     setImmediate(() => {
-      console.error('Unable to run the server because of the following error:');
+      console.error("Unable to run the server because of the following error:");
       console.error(err);
-      process.exit();
+      process.exit(1);
     });
   });
