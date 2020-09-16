@@ -1,21 +1,20 @@
-"use strict";
+import http, { Server } from "http";
+import server from "./server";
+import config from "./config";
 
-const http = require("http");
-const server = require("./server");
-
-const { port } = require("./config").server;
-
-async function bootstrap() {
+async function bootstrap(): Promise<Server> {
   /**
    * Add external services init as async operations (db, redis, etc...)
    * e.g.
    * await sequelize.authenticate()
    */
-  return http.createServer(server.callback()).listen(port);
+  // @ts-ignore
+  return http.createServer(server.callback()).listen(config.server.port);
 }
 
 bootstrap()
-  .then((server) =>
+  .then((server: Server) =>
+    // @ts-ignore
     console.log(`🚀 Server listening on port ${server.address().port}!`),
   )
   .catch((err) => {
