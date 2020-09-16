@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marcoantonioghiani01/koa-template.git"
+    "url": "git+https://github.com/jakxz/koa-template.git"
   },
   "author": "Marco Antonio Ghiani <marcoantonio.ghiani01@gmail.com> (https://github.com/marcoantonioghiani01)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/marcoantonioghiani01/koa-template/issues"
+    "url": "https://github.com/jakxz/koa-template/issues"
   },
-  "homepage": "https://github.com/marcoantonioghiani01/koa-template#readme",
+  "homepage": "https://github.com/jakxz/koa-template#readme",
   "devDependencies": {
     "eslint": "5.16.0",
     "eslint-config-prettier": "4.3.0",
