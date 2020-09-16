@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const joi = require('joi');
+const joi = require("joi");
 
 /**
  * Generate a validation schema using joi to check the type of your environment variables
@@ -9,10 +9,7 @@ const envSchema = joi
   .object({
     DB_USER: joi.string(),
     DB_HOST: joi.string(),
-    DB_PASSWORD: joi
-      .string()
-      .optional()
-      .empty(''),
+    DB_PASSWORD: joi.string().optional().empty(""),
     DB_DATABASE: joi.string(),
     DB_PORT: joi.number(),
   })
@@ -27,7 +24,7 @@ if (error) {
   throw new Error(`Config validation error: ${error.message}`);
 }
 
-const config = {
+module.exports = {
   databaseConfig: {
     user: envVars.DB_USER,
     host: envVars.DB_HOST,
@@ -36,5 +33,3 @@ const config = {
     port: envVars.DB_PORT,
   },
 };
-
-module.exports = config;
